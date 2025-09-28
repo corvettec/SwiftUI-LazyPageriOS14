@@ -79,7 +79,7 @@ class ZoomableView<Element, Content: View>: UIScrollView, UIScrollViewDelegate, 
         bouncesZoom = true
         backgroundColor = .clear
         alwaysBounceVertical = false
-        contentInsetAdjustmentBehavior = .always
+        contentInsetAdjustmentBehavior = .never
         if config.dismissCallback != nil {
             alwaysBounceVertical = true
         }
@@ -266,10 +266,10 @@ class ZoomableView<Element, Content: View>: UIScrollView, UIScrollViewDelegate, 
         
         if zoomScale <= maximumZoomScale {
             let targetInsets = UIEdgeInsets(
-                top: top - self.safeAreaInsets.top,
-                left: left - self.safeAreaInsets.left,
-                bottom: top - self.safeAreaInsets.bottom,
-                right: left - self.safeAreaInsets.right
+                top: top,
+                left: left,
+                bottom: top,
+                right: left,
             )
             
             UIView.animate(withDuration: 0.3) {

@@ -18,6 +18,9 @@ struct LazyPagerApp: App {
                     NavigationLink(destination: SimpleExample()) {
                         Text("Simple Example")
                     }
+                    NavigationLink(destination: InsetTest()) {
+                        Text("Inset test")
+                    }
                     NavigationLink(destination: EnvironmentExample()
                         .environmentObject(TextHolder(str: "hello world"))
                         .environment(\.customValue, "custom environment value")

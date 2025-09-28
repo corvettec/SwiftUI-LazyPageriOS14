@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D309D3802E88B66E007A6FDC /* InsetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309D37F2E88B66E007A6FDC /* InsetTest.swift */; };
 		D33BC0522B69E6EE004B4338 /* SimpleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BC0512B69E6EE004B4338 /* SimpleExample.swift */; };
 		D33F96FD2C62F582004D934A /* VerticalMediaPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F96FC2C62F582004D934A /* VerticalMediaPager.swift */; };
 		D353FB592A52174B00C04ABE /* LazyPagerExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D353FB582A52174B00C04ABE /* LazyPagerExampleApp.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D309D37F2E88B66E007A6FDC /* InsetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTest.swift; sourceTree = "<group>"; };
 		D33BC0512B69E6EE004B4338 /* SimpleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExample.swift; sourceTree = "<group>"; };
 		D33F96FC2C62F582004D934A /* VerticalMediaPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalMediaPager.swift; sourceTree = "<group>"; };
 		D353FB552A52174B00C04ABE /* LazyPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				D353FB582A52174B00C04ABE /* LazyPagerExampleApp.swift */,
 				D33F96FC2C62F582004D934A /* VerticalMediaPager.swift */,
 				D33BC0512B69E6EE004B4338 /* SimpleExample.swift */,
+				D309D37F2E88B66E007A6FDC /* InsetTest.swift */,
 				D3776B5E2CF5658500AFB89D /* AnimatedPagerControlsExample.swift */,
 				D353FB5A2A52174B00C04ABE /* FullTestView.swift */,
 				D353FB5C2A52174C00C04ABE /* Assets.xcassets */,
@@ -296,6 +299,7 @@
 				D33BC0522B69E6EE004B4338 /* SimpleExample.swift in Sources */,
 				D3B3AEAC2DBD500800AC1E33 /* EnvironmentExample.swift in Sources */,
 				D353FB592A52174B00C04ABE /* LazyPagerExampleApp.swift in Sources */,
+				D309D3802E88B66E007A6FDC /* InsetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

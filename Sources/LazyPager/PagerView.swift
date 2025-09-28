@@ -89,6 +89,7 @@ class PagerView<Element, Loader: ViewLoader, Content: View>: UIScrollView, UIScr
         backgroundColor = .clear
         decelerationRate = .fast
         delegate = self
+        contentInsetAdjustmentBehavior = .always
         // DEBUG
 //        backgroundColor = .blue
     }
@@ -157,17 +158,10 @@ class PagerView<Element, Loader: ViewLoader, Content: View>: UIScrollView, UIScr
             }
         }
         self.removeOutOfFrameViews()
-        if config.direction == .horizontal {
-            contentInset = UIEdgeInsets(top: 0,
-                                        left: -safeAreaInsets.left,
-                                        bottom: 0,
-                                        right: -safeAreaInsets.right)
-        } else {
-            contentInset = UIEdgeInsets(top: -safeAreaInsets.top,
-                                        left: 0,
-                                        bottom: -safeAreaInsets.bottom,
-                                        right: 0)
-        }
+        contentInset = UIEdgeInsets(top: -safeAreaInsets.top,
+                                    left: -safeAreaInsets.left,
+                                    bottom: -safeAreaInsets.bottom,
+                                    right: -safeAreaInsets.right)
         
         // Debug
 //         print(self.loadedViews.map { $0.index })
