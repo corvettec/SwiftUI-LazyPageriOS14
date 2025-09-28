@@ -30,6 +30,7 @@ class PagerView<Element, Loader: ViewLoader, Content: View>: UIScrollView, UIScr
     var loadedViews = [ZoomableView<Element, Content>]()
     var config: Config<Element>
     weak var viewLoader: Loader?
+    var lastBoundsSize: CGSize?
     
     var isRotating = false
     var page: Binding<Int>
@@ -107,6 +108,12 @@ class PagerView<Element, Loader: ViewLoader, Content: View>: UIScrollView, UIScr
         } else if isRotating {
             ensureCurrentPage(animated: false)
         }
+    
+        // Ensures insets are updated when the screen rotates
+        if bounds.size != lastBoundsSize {
+            updateInsets(animated: lastBoundsSize != nil)
+            lastBoundsSize = bounds.size
+        }
     }
     
     func computeViewState(immediate: Bool = false) {
@@ -158,13 +165,26 @@ class PagerView<Element, Loader: ViewLoader, Content: View>: UIScrollView, UIScr
             }
         }
         self.removeOutOfFrameViews()
-        contentInset = UIEdgeInsets(top: -safeAreaInsets.top,
-                                    left: -safeAreaInsets.left,
-                                    bottom: -safeAreaInsets.bottom,
-                                    right: -safeAreaInsets.right)
+        updateInsets(animated: false)
         
         // Debug
 //         print(self.loadedViews.map { $0.index })
+    }
+    
+    func updateInsets(animated: Bool) {
+        let update = {
+            self.contentInset = UIEdgeInsets(top: -self.safeAreaInsets.top,
+                                             left: -self.safeAreaInsets.left,
+                                             bottom: -self.safeAreaInsets.bottom,
+                                             right: -self.safeAreaInsets.right)
+        }
+        if !animated {
+            update()
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                update()
+            }
+        }
     }
     
     
